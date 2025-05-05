@@ -1,0 +1,13 @@
+<h1>Log in</h1>
+<%= form_with model: @user do |form| %>
+  <%= form.label :name, "Username: " %>
+  <%= form.text_field :name %>
+  <br>
+  <%= form.label :email, "Email: " %>
+  <%= form.email_field :email %>
+  <br>
+  <%= form.label :password, "Password: " %>
+  <%= form.text_field :password %>
+  <br>
+  <%= form.submit %>
+<% end %>
