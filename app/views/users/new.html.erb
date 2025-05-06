@@ -1,20 +1,2 @@
 <h1>Log in</h1>
-<%= form_with model: @user do |form| %>
-  <%= form.label :name, "Username: " %>
-  <%= form.text_field :name %>
-  <br>
-  <%= form.label :email, "Email: " %>
-  <%= form.email_field :email %>
-  <br>
-  <%= form.label :password, "Password: " %>
-  <%= form.password_field :password %>
-  <% if @user.errors.any? %>
-    <% @user.errors.full_messages.each do |msg| %>
-      <ul>
-        <li><%= msg %></li>
-      </ul>
-    <% end %>
-  <% end %>
-  <br>
-  <%= form.submit %>
-<% end %>
+<%= render "users/form", user: @user %>
