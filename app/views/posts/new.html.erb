@@ -1,0 +1,15 @@
+<h1>Create Post</h1>
+<%= form_with model: [@user, @post] do |form| %>
+  <%= form.label :body, "Text Body: " %>
+  <%= form.text_area :body %>
+  <br>
+  <% if @post.errors.any? %>
+    <% @post.errors.full_messages.each do |msg| %>
+      <ul>
+        <li><%= msg %></li>
+      </ul>
+    <% end %>
+  <% end %>
+  <br>
+  <%= form.submit %>
+<% end %>
