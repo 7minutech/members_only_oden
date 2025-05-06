@@ -1,6 +1,9 @@
 <h1>Create Post</h1>
 <%= form_with model: [@user, @post] do |form| %>
-  <%= form.label :body, "Text Body: " %>
+  <%= form.label :title, "Post Title: " %>
+  <%= form.text_field :title %>
+  <br><br>
+  <%= form.label :body, "Post Body: " %>
   <%= form.text_area :body %>
   <br>
   <% if @post.errors.any? %>
