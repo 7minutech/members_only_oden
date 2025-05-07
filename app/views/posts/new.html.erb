@@ -1,3 +1,4 @@
 <h1>Create Post</h1>
-<h2> <%= link_to 'Profile', user_path(@user) %> </h2>
 <%= render "posts/form", user: @user, post: @post%>
+<br>
+<%= link_to 'Profile', user_path(current_user) %>
