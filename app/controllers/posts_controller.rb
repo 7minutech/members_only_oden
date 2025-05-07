@@ -8,6 +8,10 @@ class PostsController < ApplicationController
     @post = @user.posts.build
   end
 
+  def show
+    @user = User.find(current_user.id)
+  end
+
   def create
     @user = User.find(params[:user_id])
     @post = @user.posts.create(post_params)
