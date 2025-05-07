@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   root to: "users#index"
 
+  get "users/posts", to: "posts#index", as: "all_users_posts"
+
   resources :users do
     resources :posts
   end
