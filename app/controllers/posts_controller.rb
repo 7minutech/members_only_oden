@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :require_login, except: [ :index ]
   def index
     @posts = Post.all.sort_by(&:created_at)
   end
@@ -23,6 +24,12 @@ class PostsController < ApplicationController
   end
 
   private
+
+  def require_login
+    if !user_signed_in?
+      redirect_to new_user_session_path
+    end
+  end
 
   def post_params
     params.require(:post).permit(:title, :body)
