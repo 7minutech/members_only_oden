@@ -1,4 +1,8 @@
 class PostsController < ApplicationController
+  def index
+    @posts = Post.all.sort_by(&:created_at)
+  end
+
   def new
     @user = User.find(params[:user_id])
     @post = @user.posts.build
